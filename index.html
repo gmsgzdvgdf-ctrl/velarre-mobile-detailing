@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velarre Mobile Detailing | Highlands County, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #cda45e;
+    --gold-bright: #e6c785;
+    --gold-dim: #8a6d3a;
+    --black: #0a0908;
+    --charcoal: #141210;
+    --charcoal-2: #1c1916;
+    --off-white: #ede7db;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+  h1, h2, h3, .brand {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+    color: var(--gold-bright);
+  }
+  a { text-decoration: none; color: inherit; }
+  .gold-rule {
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 22px auto;
+  }
+  .gold-rule.left { margin: 22px 0; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,9,8,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(205,164,94,0.25);
+  }
+  .nav-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+  }
+  .brand {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+  }
+  .brand span { color: var(--off-white); font-weight: 500; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 34px;
+  }
+  nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    transition: color 0.25s;
+  }
+  nav a:hover { color: var(--gold-bright); }
+  .nav-cta {
+    border: 1px solid var(--gold);
+    padding: 9px 20px;
+    font-size: 12px;
+    color: var(--gold-bright) !important;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black) !important; }
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(205,164,94,0.10), transparent 60%),
+      linear-gradient(180deg, #0a0908 0%, #141210 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(90deg, rgba(205,164,94,0.04) 0 1px, transparent 1px 120px);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.35em;
+    font-size: 13px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 96px);
+    letter-spacing: 0.14em;
+    line-height: 1.05;
+  }
+  .hero-tagline {
+    font-style: italic;
+    font-size: clamp(19px, 2.4vw, 26px);
+    color: var(--off-white);
+    max-width: 640px;
+    margin: 26px auto 0;
+    opacity: 0.9;
+  }
+  .hero-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-primary, .btn-secondary {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 15px 34px;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-dim));
+    color: var(--black);
+    font-weight: 600;
+  }
+  .btn-primary:hover { filter: brightness(1.1); }
+  .btn-secondary {
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+  }
+  .btn-secondary:hover { background: rgba(205,164,94,0.1); }
+
+  section { padding: 100px 24px; max-width: 1180px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .section-head h2 { font-size: clamp(28px, 4vw, 42px); margin-top: 10px; }
+  .section-head p { color: rgba(237,231,219,0.75); max-width: 620px; margin: 18px auto 0; font-size: 19px; }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(205,164,94,0.18);
+    padding: 38px 30px;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .service-icon {
+    width: 46px; height: 46px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+  .service-card h3 { font-size: 21px; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .service-card p { color: rgba(237,231,219,0.75); font-size: 17px; }
+
+  /* About / Raceway */
+  .about-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 820px) { .about-wrap { grid-template-columns: 1fr; } }
+  .about-text h2 { font-size: clamp(26px, 4vw, 38px); margin-bottom: 20px; }
+  .about-text p { color: rgba(237,231,219,0.8); margin-bottom: 16px; font-size: 19px; }
+  .about-panel {
+    background: var(--charcoal-2);
+    border: 1px solid rgba(205,164,94,0.22);
+    padding: 42px 34px;
+  }
+  .about-panel .stat { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(205,164,94,0.15); }
+  .about-panel .stat:last-child { border-bottom: none; }
+  .about-panel .stat span:first-child { font-family:'Cinzel', serif; font-size: 13px; letter-spacing: 0.08em; color: rgba(237,231,219,0.7); }
+  .about-panel .stat span:last-child { color: var(--gold-bright); font-size: 19px; }
+
+  /* Service area */
+  .area-section { background: var(--charcoal); }
+  .area-list {
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 30px;
+  }
+  .area-chip {
+    border: 1px solid rgba(205,164,94,0.35);
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 10px 22px;
+    text-transform: uppercase;
+  }
+
+  /* Contact */
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  @media (max-width: 820px) { .contact-wrap { grid-template-columns: 1fr; } }
+  .contact-info h2 { font-size: clamp(26px, 4vw, 38px); margin-bottom: 18px; }
+  .contact-info p { color: rgba(237,231,219,0.8); margin-bottom: 26px; }
+  .contact-line { display: flex; gap: 14px; margin-bottom: 16px; font-size: 19px; }
+  .contact-line .label { font-family:'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; min-width: 100px; padding-top: 3px;}
+  .placeholder { color: rgba(237,231,219,0.45); font-style: italic; }
+
+  form { background: var(--charcoal-2); border: 1px solid rgba(205,164,94,0.22); padding: 34px; }
+  form label { display: block; font-family:'Cinzel', serif; font-size: 12px; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; margin-top: 18px; }
+  form label:first-child { margin-top: 0; }
+  form input, form select, form textarea {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid rgba(205,164,94,0.3);
+    color: var(--off-white);
+    padding: 12px 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+  }
+  form textarea { resize: vertical; min-height: 90px; }
+  form button {
+    margin-top: 26px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-dim));
+    color: var(--black);
+    border: none;
+    padding: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  form button:hover { filter: brightness(1.1); }
+  form p.note { font-size: 14px; color: rgba(237,231,219,0.5); margin-top: 14px; font-style: italic; }
+
+  footer {
+    border-top: 1px solid rgba(205,164,94,0.2);
+    padding: 44px 24px 30px;
+    text-align: center;
+  }
+  footer .brand { font-size: 18px; }
+  footer p { color: rgba(237,231,219,0.5); font-size: 15px; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">VELARRE<span> DETAILING</span></div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#area">Service Area</a></li>
+        <li><a href="#contact" class="nav-cta">Request a Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Highlands County · Florida</div>
+  <h1>VELARRE</h1>
+  <div class="gold-rule"></div>
+  <p class="hero-tagline">Bespoke mobile detailing for the discerning driver — brought to your door, your garage, or the paddock.</p>
+  <div class="hero-buttons">
+    <a href="#contact" class="btn-primary">Request a Quote</a>
+    <a href="#services" class="btn-secondary">View Services</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="section-eyebrow">Our Craft</div>
+    <h2>Detailing Services</h2>
+    <p>Every vehicle is treated as what it is — an investment. Each service is performed on-site with premium products and meticulous attention.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">I</div>
+      <h3>Signature Hand Detail</h3>
+      <p>A comprehensive hand wash, decontamination, and finishing detail for daily drivers and weekend cars alike.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">II</div>
+      <h3>Exotic &amp; Performance Detail</h3>
+      <p>Specialized care for exotic, luxury, and performance vehicles — tailored to sensitive finishes, wraps, and high-value trims.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">III</div>
+      <h3>Paint Correction &amp; Ceramic Coating</h3>
+      <p>Multi-stage correction to remove swirl marks and imperfections, sealed with a long-term ceramic coating.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">IV</div>
+      <h3>Interior Restoration</h3>
+      <p>Deep interior cleaning, leather conditioning, and odor elimination — restoring the cabin to showroom condition.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">V</div>
+      <h3>Trackside &amp; Event Detailing</h3>
+      <p>Pre- and post-event detailing for track day and Sebring International Raceway regulars — because the car should look as sharp as it runs.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">VI</div>
+      <h3>Maintenance Memberships</h3>
+      <p>Recurring detail plans to keep your vehicle at its best year-round, scheduled around your routine.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-text">
+      <div class="section-eyebrow">Why Velarre</div>
+      <h2>Precision, Discretion, and a Genuine Love of Fine Automobiles</h2>
+      <p>Velarre Mobile Detailing was founded to bring a level of care usually reserved for concours-level shops directly to Highlands County drivers — at home, at work, or trackside.</p>
+      <p>Based minutes from Sebring International Raceway, we understand exotic and performance vehicles the way owners do: as machines worth protecting, not just cleaning.</p>
+      <p>Every appointment is treated with the same discretion and precision, whether it's a daily driver or a track-ready exotic.</p>
+    </div>
+    <div class="about-panel">
+      <div class="stat"><span>Service Area</span><span>Highlands County, FL</span></div>
+      <div class="stat"><span>Specialty</span><span>Exotic &amp; Performance Vehicles</span></div>
+      <div class="stat"><span>Location Perk</span><span>Minutes from Sebring Raceway</span></div>
+      <div class="stat"><span>Service Model</span><span>Fully Mobile — We Come to You</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="area" class="area-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Where We Work</div>
+    <h2>Proudly Serving Highlands County</h2>
+    <p>Velarre travels throughout Highlands County, including areas surrounding Sebring International Raceway, to bring the detail bay to you.</p>
+  </div>
+  <div class="area-list">
+    <div class="area-chip">Sebring</div>
+    <div class="area-chip">Avon Park</div>
+    <div class="area-chip">Lake Placid</div>
+    <div class="area-chip">Sebring International Raceway</div>
+    <div class="area-chip">Surrounding Highlands County</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2>Request Your Detail</h2>
+      <p>Tell us about your vehicle and we'll follow up with a tailored quote. Exotic and performance vehicle owners welcome — we come to you.</p>
+      <div class="contact-line"><span class="label">Phone</span><span class="placeholder">[Add phone number]</span></div>
+      <div class="contact-line"><span class="label">Email</span><span class="placeholder">[Add email address]</span></div>
+      <div class="contact-line"><span class="label">Hours</span><span class="placeholder">[Add service hours]</span></div>
+      <div class="contact-line"><span class="label">Social</span><span class="placeholder">[Add Instagram / Facebook]</span></div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Thanks — this form is a visual placeholder. Connect it to email or a booking service to go live.');">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name">
+      <label for="vehicle">Vehicle</label>
+      <input type="text" id="vehicle" placeholder="Make, model, year">
+      <label for="service">Service Interested In</label>
+      <select id="service">
+        <option>Signature Hand Detail</option>
+        <option>Exotic &amp; Performance Detail</option>
+        <option>Paint Correction &amp; Ceramic Coating</option>
+        <option>Interior Restoration</option>
+        <option>Trackside &amp; Event Detailing</option>
+        <option>Maintenance Membership</option>
+      </select>
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Tell us about your vehicle and when you'd like service"></textarea>
+      <button type="submit">Request a Quote</button>
+      <p class="note">This form is a visual placeholder — connect it to your email or a booking tool before launch.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">VELARRE<span> DETAILING</span></div>
+  <p>&copy; 2026 Velarre Mobile Detailing · Highlands County, Florida</p>
+</footer>
+
+</body>
+</html>
